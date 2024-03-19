@@ -1,4 +1,8 @@
+// Importing the sql function from @vercel/postgres, allowsing us you to query our database
+// You can call sql inside any Server Component, but to allow you to navigate the components more easily, we've kept all the data queries in the data.ts file, and you can import them into the components
 import { sql } from '@vercel/postgres';
+
+
 import {
   CustomerField,
   CustomersTableType,
@@ -8,6 +12,7 @@ import {
   User,
   Revenue,
 } from './definitions';
+
 import { formatCurrency } from './utils';
 
 export async function fetchRevenue() {
@@ -32,6 +37,7 @@ export async function fetchRevenue() {
   }
 }
 
+// Fetch the last 5 invoices, sorted by date
 export async function fetchLatestInvoices() {
   try {
     const data = await sql<LatestInvoiceRaw>`

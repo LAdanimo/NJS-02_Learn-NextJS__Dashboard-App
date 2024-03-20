@@ -122,3 +122,11 @@ export default async function InvoicesTable({
     </div>
   );
 }
+
+/* Accesibility note: Removing line 93 herein and running "npm run lint" results in the following error message:
+
+./app/ui/invoices/table.tsx
+88:23  Warning: Image elements must have an alt prop, either with meaningful text, or an empty string for decorative images.  jsx-a11y/alt-text 
+
+info  - Need to disable some ESLint rules? Learn more here: https://nextjs.org/docs/basic-features/eslint#disabling-rules
+*/

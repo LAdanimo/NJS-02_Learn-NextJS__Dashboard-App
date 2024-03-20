@@ -178,6 +178,8 @@ export async function fetchInvoiceById(id: string) {
       amount: invoice.amount / 100,
     }));
 
+    // console.log(invoice); // Invoices with invalid UUIDs are an empty array []
+
     return invoice[0];
   } catch (error) {
     console.error('Database Error:', error);

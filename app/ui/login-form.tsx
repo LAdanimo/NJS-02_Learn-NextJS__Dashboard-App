@@ -12,6 +12,12 @@ import { Button } from './button';
 import { useFormState, useFormStatus } from 'react-dom';
 import { authenticate } from '@/app/lib/actions';
 
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: 'Log In',
+};
+
 export default function LoginForm() {
   const [errorMessage, dispatch] = useFormState(authenticate, undefined);
 
